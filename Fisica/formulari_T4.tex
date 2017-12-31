@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[landscape,margin=0.5in,top=0.5in,bottom=0.5in,a4paper]{geometry}
+\usepackage{amsmath,multicol,titlesec,graphicx,listings}
+
+\usepackage[utf8]{inputenc}
+\titlespacing{\section}{0pt}{5pt}{0pt}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{5pt}{0pt}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\setlength{\columnseprule}{1pt}
+\let\u\relax
+\newcommand{\u}[1]{\underline{#1}}
+\newcommand{\ci}{\textbullet\;}
+ 
+\begin{document}
+\raggedright
+\begin{multicols}{1}
+
+\section{Ones harm\`oniques}
+
+\u{Moviment simple}: $f\left( t \right) A\sin\left( 2\pi f\left( t-t_0 \right) \right), x = vt_x$. \\
+\u{Longitud d'ona}: $\lambda = vT$. \\
+\u{Moviment ondulatori}: $f\left( x,t \right) = A\sin\left( 2\pi f\left( t-t_x \right) \right) = A\sin \left[ 2\pi \left( \frac{t}{T} - \frac{x}{\lambda} \right) \right] = A\sin\left( \omega t-kx \right)$.
+$\omega = \frac{2\pi}{T}, k = \frac{2\pi}{\lambda}$. \\
+\u{Velocitat de fase}: $\frac{\omega}{k}$. \\
+% TODO Problemes 1, 3
+
+\section{Ones electromagn\`etiques}
+
+\u{Permeabilitat el\`ectrica absoluta}: $\varepsilon = \frac{D}{E}$. \\
+\u{Constat diel\`ectrica}: $\varepsilon_0 = 8.85\times 10^{12}$ F/m. \\
+\u{Permeabilitat magn\`etica absoluta}: $\mu = \frac{B}{H}$. \\
+\u{Contant mag\`etica}: $\mu_0 = 4\pi \times 10^{-7}$ Tm$\text{A}^{-1}$. \\
+\ci $c = \frac{1}{\sqrt{\varepsilon_0\mu_0}}$. \\
+\u{Equaci\'o ona camp el\`ectric}: $\overrightarrow{E}\left( x,t \right) = \overrightarrow{E}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
+\u{Equaci\'o ona camp magn\`etic}: $\overrightarrow{B}\left( x,t \right) = \overrightarrow{B}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
+
+\end{multicols}
+\end{document}
