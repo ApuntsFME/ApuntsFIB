@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
  
 \usepackage[landscape,margin=0.5in,top=0.5in,bottom=0.5in,a4paper]{geometry}
-\usepackage{amsmath,multicol,titlesec,graphicx,listings}
+\usepackage{amsmath,multicol,titlesec,graphicx,listings,nicefrac}
 
 \usepackage[utf8]{inputenc}
 \titlespacing{\section}{0pt}{5pt}{0pt}
@@ -18,7 +18,7 @@
  
 \begin{document}
 \raggedright
-\begin{multicols}{1}
+%\begin{multicols}{1}
 
 \section{Ones harm\`oniques}
 
@@ -31,13 +31,29 @@ $\omega = \frac{2\pi}{T}, k = \frac{2\pi}{\lambda}$. \\
 
 \section{Ones electromagn\`etiques}
 
+\u{Velocitat}: $c \implies \lambda = cT$
 \u{Permeabilitat el\`ectrica absoluta}: $\varepsilon = \frac{D}{E}$. \\
-\u{Constat diel\`ectrica}: $\varepsilon_0 = 8.85\times 10^{12}$ F/m. \\
+\u{Constat diel\`ectrica}: $\varepsilon_0 = 8.85\times 10^{12}$ [$\nicefrac{F}{m}$]. \\
 \u{Permeabilitat magn\`etica absoluta}: $\mu = \frac{B}{H}$. \\
 \u{Contant mag\`etica}: $\mu_0 = 4\pi \times 10^{-7}$ Tm$\text{A}^{-1}$. \\
 \ci $c = \frac{1}{\sqrt{\varepsilon_0\mu_0}}$. \\
 \u{Equaci\'o ona camp el\`ectric}: $\overrightarrow{E}\left( x,t \right) = \overrightarrow{E}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
 \u{Equaci\'o ona camp magn\`etic}: $\overrightarrow{B}\left( x,t \right) = \overrightarrow{B}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
+$\overrightarrow{B} = \frac{1}{c}\left[ \overrightarrow{u} \times \overrightarrow{E} \right], \overrightarrow{E} = c \left[ \overrightarrow{B} \times \overrightarrow{u} \right]$. \\
+\u{Apunt sobre el producte vectorial}: $\overrightarrow{c} = \left[ \overrightarrow{a} \times \overrightarrow{b} \right] \implies |c| = ab\sin\theta$ i $c \bot a,b$. \\
+\u{Regla de la m\`a dreta}: polze = $\overrightarrow{c}$, \'index = $\overrightarrow{a}$, cor = $\overrightarrow{b}$. \\
+\u{Densitat instant\`ania camp ele\`ectric}: $\eta\left( x,t \right) = \frac{1}{2}\varepsilon_0 E^2 + \frac{B^2}{2\mu_0} = \varepsilon_0 E^2 = \varepsilon_0 E_0^2\sin^2\left( kx \pm \omega t + \delta \right)$ [$\nicefrac{J}{m^3}$]. \\
+\u{Densitat mitjana camp el\`ectric}: $\eta = <\eta\left( x,t \right)> = \frac{1}{2}\varepsilon_0 E_0^2 = \frac{B_0^2}{2\mu_0}$. \\
+\u{Intensitat instant\`ania ona electromagn\`etica}: $I\left( x,t \right) = \frac{P}{S} = c\eta\left( x,t \right) = c\varepsilon_0 E_0^2\sin^2\left( kx \pm \omega t+ \delta \right) = \frac{P}{4\pi r^2}$. \\
+\u{Intensitat mitjana}: $I = <I\left( x,t \right)> = \frac{1}{2}c\varepsilon_0 E_0^2 = \frac{c B_0^2}{2\mu_0}$. \\
+% TODO Problemes 7,8,12
+\u{Llei de Plank}: $I\left( \nu,T \right) = \frac{2h\nu^3}{c^2 (e^{\frac{h\nu}{kT}} - 1)}$. \\
+% TODO Problema 10
+% TODO Diapos 77-95
 
-\end{multicols}
+\section{Reflecci\'o i refracci\'o}
+
+
+
+%\end{multicols}
 \end{document}
