@@ -1,6 +1,15 @@
 \documentclass[12pt]{article}
- 
+
+\newif\ifland
+%\landtrue
+\landfalse
+
+\ifland
 \usepackage[landscape,margin=0.5in,top=0.5in,bottom=0.5in,a4paper]{geometry}
+\else
+\usepackage[margin=1in,a4paper]{geometry}
+\fi
+
 \usepackage{amsmath,multicol,titlesec,graphicx,listings,nicefrac}
 
 \usepackage[utf8]{inputenc}
@@ -17,8 +26,10 @@
 \newcommand{\ci}{\textbullet\;}
  
 \begin{document}
+\ifland
 \raggedright
-%\begin{multicols}{1}
+\begin{multicols}{4}
+\fi
 
 \section{Ones harm\`oniques}
 
@@ -37,11 +48,11 @@ $\omega = \frac{2\pi}{T}, k = \frac{2\pi}{\lambda}$. \\
 \u{Permeabilitat magn\`etica absoluta}: $\mu = \frac{B}{H}$. \\
 \u{Contant mag\`etica}: $\mu_0 = 4\pi \times 10^{-7}$ Tm$\text{A}^{-1}$. \\
 \ci $c = \frac{1}{\sqrt{\varepsilon_0\mu_0}}$. \\
-\u{Equaci\'o ona camp el\`ectric}: $\overrightarrow{E}\left( x,t \right) = \overrightarrow{E}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
-\u{Equaci\'o ona camp magn\`etic}: $\overrightarrow{B}\left( x,t \right) = \overrightarrow{B}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
-$\overrightarrow{B} = \frac{1}{c}\left[ \overrightarrow{u} \times \overrightarrow{E} \right], \overrightarrow{E} = c \left[ \overrightarrow{B} \times \overrightarrow{u} \right]$. \\
-\u{Apunt sobre el producte vectorial}: $\overrightarrow{c} = \left[ \overrightarrow{a} \times \overrightarrow{b} \right] \implies |c| = ab\sin\theta$ i $c \bot a,b$. \\
-\u{Regla de la m\`a dreta}: polze = $\overrightarrow{c}$, \'index = $\overrightarrow{a}$, cor = $\overrightarrow{b}$. \\
+\u{Equaci\'o ona camp el\`ectric}: $\vec{E}\left( x,t \right) = \vec{E}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
+\u{Equaci\'o ona camp magn\`etic}: $\vec{B}\left( x,t \right) = \vec{B}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
+$\vec{B} = \frac{1}{c}\left[ \vec{u} \times \vec{E} \right], \vec{E} = c \left[ \vec{B} \times \vec{u} \right]$. \\
+\u{Apunt sobre el producte vectorial}: $\vec{c} = \left[ \vec{a} \times \vec{b} \right] \implies |c| = ab\sin\theta$ i $c \bot a,b$. \\
+\u{Regla de la m\`a dreta}: polze = $\vec{c}$, \'index = $\vec{a}$, cor = $\vec{b}$. \\
 \u{Densitat instant\`ania camp ele\`ectric}: $\eta\left( x,t \right) = \frac{1}{2}\varepsilon_0 E^2 + \frac{B^2}{2\mu_0} = \varepsilon_0 E^2 = \varepsilon_0 E_0^2\sin^2\left( kx \pm \omega t + \delta \right)$ [$\nicefrac{J}{m^3}$]. \\
 \u{Densitat mitjana camp el\`ectric}: $\eta = <\eta\left( x,t \right)> = \frac{1}{2}\varepsilon_0 E_0^2 = \frac{B_0^2}{2\mu_0}$. \\
 \u{Intensitat instant\`ania ona electromagn\`etica}: $I\left( x,t \right) = \frac{P}{S} = c\eta\left( x,t \right) = c\varepsilon_0 E_0^2\sin^2\left( kx \pm \omega t+ \delta \right) = \frac{P}{4\pi r^2}$. \\
@@ -49,11 +60,24 @@ $\overrightarrow{B} = \frac{1}{c}\left[ \overrightarrow{u} \times \overrightarro
 % TODO Problemes 7,8,12
 \u{Llei de Plank}: $I\left( \nu,T \right) = \frac{2h\nu^3}{c^2 (e^{\frac{h\nu}{kT}} - 1)}$. \\
 % TODO Problema 10
+
+\section{Polarizaci\'on}
+
 % TODO Diapos 77-95
+\u{Camp el\`ectric ona plana}: $\vec{E} = \vec{E}_0 e^{i\left( \vec{k}\cdot\vec{r} \pm \omega\cdot t \right)}$. \\
 
 \section{Reflecci\'o i refracci\'o}
 
+\u{\'Index de refracci\'o}: $n = \frac{V}{c}$, $V =$ velocidad de fase en el medio. \\
+\u{Medis homogenis i is\`otrops}: $n$ constant. \\
+\u{Medis anis\`otrop}: $n$ en funci\'o de direcci\'o. \\
+\u{Medis heterogenis}: $n$ varia en funci\'o del punt. \\
+\u{Al canviar de medi}: $f$ const., $V$ i $\lambda$ varien. \\
+% TODO Problema 17
+\u{Llei de Snell (refracci\'o)}: $n_1\sin\theta_1 = n_2\sin\theta_2$. \\
+\u{$\theta_i$}: Angle raig-normal a la superf\'icie. \\
 
-
-%\end{multicols}
+\ifland
+\end{multicols}
+\fi
 \end{document}
