@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NAME="formulari_T4"
+DEST="/pdfs/apuntsfib/fisica/formulari_t4.pdf"
+MSG="formulari fisica FIB T4"
+
+source ../upload_file.sh
+
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"

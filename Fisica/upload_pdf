@@ -1,9 +1,0 @@
-#!/bin/bash
-
-SRC="formulari_T4"
-DEST="/pdfs/apuntsfib/fisica/formulari_t4.pdf"
-MSG="Formulari T4 actualitzat :smiley :smirk:"
-
-source ../upload_file.sh
-
-upload "$SRC" "$DEST" "$MSG"

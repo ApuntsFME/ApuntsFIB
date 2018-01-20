@@ -1,0 +1,107 @@
+\documentclass[10pt]{article}
+
+\newif\ifland
+\landtrue
+%\landfalse
+\usepackage[T1]{fontenc}
+
+\usepackage{fp}
+\def\rate{0.75}
+
+\FPeval{\he}{297 * \rate}
+\FPeval{\wi}{210 * \rate}
+\ifland
+\usepackage[landscape,paperheight=\he mm,paperwidth=\wi mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\else
+\usepackage[margin=1in,a5paper]{geometry}
+\fi
+
+\usepackage{amsmath,multicol,titlesec,graphicx,listings,nicefrac, soulutf8}
+
+\usepackage[utf8]{inputenc}
+\titlespacing{\section}{0pt}{5pt}{0pt}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{5pt}{0pt}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\setlength{\columnseprule}{1pt}
+%\let\ul\relax
+%\newcommand{\ul}[1]{\ulnderline{#1}}
+\newcommand{\ci}{\textbullet\;}
+ 
+\begin{document}
+\ifland
+\raggedright
+\begin{multicols}{4}
+\fi
+
+\section{Ones harm\`oniques}
+
+\ul{Moviment simple}: $f\left( t \right) A\sin\left( 2\pi f\left( t-t_0 \right) \right), x = vt_x$. \\
+\ul{Longitud d'ona}: $\lambda = vT$. \\
+\ul{Moviment ondulatori}: $f\left( x,t \right) = A\sin\left( 2\pi f\left( t-t_x \right) \right) = A\sin \left[ 2\pi \left( \frac{t}{T} - \frac{x}{\lambda} \right) \right] = A\sin\left( \omega t-kx \right)$.
+$\omega = \frac{2\pi}{T}, k = \frac{2\pi}{\lambda}$. \\
+\ul{Velocitat de fase}: $\frac{\omega}{k}$.
+% TODO Problemes 1, 3
+
+\section{Ones electromagn\`etiques}
+
+\ul{Velocitat}: $c \implies \lambda = cT$
+\ul{Permeabilitat el\`ectrica absoluta}: $\varepsilon = \frac{D}{E}$. \\
+\ul{Constat diel\`ectrica}: $\varepsilon_0 = 8.85\times 10^{-12}$ [$\nicefrac{F}{m}$]. \\
+\ul{Permeabilitat magn\`etica absoluta}: $\mu = \frac{B}{H}$. \\
+\ul{Contant mag\`etica}: $\mu_0 = 4\pi \times 10^{-7}$ Tm$\text{A}^{-1}$. \\
+\ci $c = \frac{1}{\sqrt{\varepsilon_0\mu_0}}$. \\
+\ul{Equaci\'o ona camp el\`ectric}: $\vec{E}\left( x,t \right) = \vec{E}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
+\ul{Equaci\'o ona camp magn\`etic}: $\vec{B}\left( x,t \right) = \vec{B}_0\sin\left( kx \pm \omega t= \delta \right)$. \\
+$\vec{B} = \frac{1}{c}\left[ \vec{u} \times \vec{E} \right], \vec{E} = c \left[ \vec{B} \times \vec{u} \right]$. \\
+\ul{Apunt sobre el producte vectorial}: $\vec{c} = \left[ \vec{a} \times \vec{b} \right] \implies |c| = ab\sin\theta$ i $c \bot a,b$. \\
+\ul{Regla de la m\`a dreta}: polze = $\vec{c}$, \'index = $\vec{a}$, cor = $\vec{b}$. \\
+\ul{Densitat instant\`ania camp ele\`ectric}: $\eta\left( x,t \right) = \frac{1}{2}\varepsilon_0 E^2 + \frac{B^2}{2\mu_0} = \varepsilon_0 E^2 = \varepsilon_0 E_0^2\sin^2\left( kx \pm \omega t + \delta \right)$ [$\nicefrac{J}{m^3}$]. \\
+\ul{Densitat mitjana camp el\`ectric}: $\eta = <\eta\left( x,t \right)> = \frac{1}{2}\varepsilon_0 E_0^2 = \frac{B_0^2}{2\mu_0}$. \\
+\ul{Intensitat instant\`ania ona electromagn\`etica}: $I\left( x,t \right) = \frac{P}{S} = c\eta\left( x,t \right) = c\varepsilon_0 E_0^2\sin^2\left( kx \pm \omega t+ \delta \right) = \frac{P}{4\pi r^2}$. \\
+\ul{Intensitat mitjana}: $I = <I\left( x,t \right)> = \frac{1}{2}c\varepsilon_0 E_0^2 = \frac{c B_0^2}{2\mu_0}$. \\
+% TODO Problemes 7,8,12
+\ul{Llei de Plank}: $I\left( \nu,T \right) = \frac{2h\nu^3}{c^2 (e^{\frac{h\nu}{kT}} - 1)}$.
+% TODO Problema 10
+
+\section{Polarizaci\'on}
+
+
+\ul{Camp el\`ectric ona plana}: $\vec{E} = \vec{E}_0 e^{i\left( \vec{k}\cdot\vec{r} \pm \omega\cdot t \right)}$.\\
+\ul{Descomposició de l'amplitud d'ona (suma d'un vector paral·lel al pla d'incidència i un perpendicular)}: $\vec{E}_0 = E_{0\parallel} \cdot e^{i\theta_{\parallel}}\cdot \vec{u_{\parallel}} + E_{0\perp} \cdot e^{i\theta_{\perp}} \cdot \vec{u_{\perp}} $.\\
+\ul{Segons el valor de la diferència de fase $·\theta = \theta_{\parallel} - \theta_{\perp}$}. Polaritazions: lineal, 0 o $\pi$; circular, $\frac{\pi}{2}$ o $\frac{3\pi}{2}$ ($E_{0\parallel} = E_{0\perp}$); i elíptica, la resta.\\
+\ul{Primera polaritzador del polaritzador lineal}: $\vec{E}_{out} = \vec{E}_{\parallel}$. Ona d'entrada: $\vec{E}_{in} = E_{\parallel} \cdot \vec{u_{\parallel}} + E_{\perp}\cdot \vec{u_{\perp}}$. Si $E_{\parallel} = E_{\perp}$, amplitud entrada: $E_{0} = \sqrt{E_{\parallel}^{2} + E_{\perp}^{2}} = \sqrt{2}E_{\parallel}$. L'amplitud disminuex de factor $\sqrt{2}$. L'energia $\eta = \frac{1}{2} \varepsilon_0 E_{0}^{2}$ dism. de factor 1/2.\\
+\ul{Segon polaritzador del polaritzador lineal}: $\vec{E}_{out} = \vec{E}_{\parallel}$. $\vec{E}_{in} = E_{0}\cos(\alpha) \cdot \vec{u_{\parallel}} + E_{0}\sin(\alpha)\cdot \vec{u_{\perp}}$ on $\alpha$ és l'angle entre eix del polaritzador i eix de polarització de la llum incident. L'amplitud de camp elèctric dism. de factor $\left|\frac{\vec{E}_{out}}{\vec{E}_{in}}\right| = \cos(\alpha)$. L'energia del camp dism. de factor $\frac{\eta_{out}}{\eta_{in}} = \cos^2(\alpha)$.
+% TODO Diapos 85-95
+\section{Reflecci\'o i refracci\'o}
+
+\ul{\'Index de refracci\'o}: $n = \frac{c}{V}$, $V =$ velocitat de fase al medi. \\
+\ul{Medis homogenis i is\`otrops}: $n$ constant. \\
+\ul{Medis anis\`otrop}: $n$ en funci\'o de direcci\'o. \\
+\ul{Medis heterogenis}: $n$ varia en funci\'o del punt. \\
+\ul{Al canviar de medi}: $f$ const., $V$ i $\lambda$ varien: $n_1 \lambda_1= n_2 \lambda_2$. \\
+% TODO Problema 17
+\ul{Llei de Snell (refracci\'o)}: $n_1\sin\theta_1 = n_2\sin\theta_2$. \\
+\ul{$\theta_i$}: Angle raig-normal a la superf\'icie. \\
+\ul{\`Angle cr\'itic o l\'imit}: $\theta_{\text{c}} = \text{arcsin} \frac{n_2}{n_1}, \, (n_2 < n_1).$
+% TODO Problema 21
+
+\section{Interfer\`encies}
+
+%TODO Diapo 116-125
+
+\section{L\`asers}
+
+\ul{Energia d'un fot\'o}: $E = hf = h\frac{c}{\lambda} = \hbar\omega, \, h = 6.626\cdot 10^{-34}$ [J$\cdot$s], $\hbar = \frac{h}{2\pi}$. \\
+\ul{Vector d'ona}: $\vec{k}, \, k = \|\vec{k}\| = \frac{2\pi}{\lambda}$. \\
+\ul{Llegir CD}: $k\cdot 2d = \pi$. \\
+\ul{Moment lineal fot\'o}: $\vec{p} = \hbar\vec{k},\, p = \hbar k = \frac{hf}{c} = \frac{h}{\lambda}$. \\
+\ul{Energia de $N$ fotons}: $E = Nhf$. \\
+
+\ifland
+\end{multicols}
+\fi
+\end{document}
